@@ -71,3 +71,7 @@ body {
 .add-button:hover {
     background-color: #9A9DC0;
 }
+.todo-task.completed .todo-text {
+    text-decoration: line-through;
+    opacity: 0.5;
+}

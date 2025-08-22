@@ -21,7 +21,7 @@ function addTodo(event) {
 //membuat html to do task
 const todoTaskHTML = `
     <li class="todo-task">
-        <span class="task-text">${todoText}</span>
+        <span class="todo-text">${todoText}</span>
         <span class="due-date">${dateValue}</span>
         <div class="-actions">
             <button class="complete-button">Selesai</button>
@@ -38,7 +38,16 @@ const clickedElement = e.target;
 if (clickedElement.classList.contains('delete-button')){
     const todoTask = clickedElement.closest('.todo-task');
     todoTask.remove();
+} else if (clickedElement.classList.contains('complete-button')){
+    const todoTask = clickedElement.closest('.todo-task');
+    todoTask.classList.toggle('completed');
+    const completeButton = todoTask.querySelector('.complete-button');
+    completeButton.textContent = todoTask.classList.contains('completed') ? 'Belum Selesai' : 'Selesai';
 }
 }
+function deleteAllTasks() {
+    todoList.innerHTML = '';
+}
+
 
 
