@@ -20,13 +20,37 @@ body {
     width: 90%;
     max-width: 600px;
 }
-.action-button {
+.todo-form {
+    display: flex;
+    gap: 10px;
+}
+.todo-form input, .todo-form button {
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #0F1428;
+    color: #AFC3EB;
+}
+.todo-input {
+    flex-grow: 1;
+}
+.add-button {
+    background-color: #6870C4;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.add-button:hover {
+    background-color: #9A9DC0;
+}
+.action-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
 
 }
-.action-button button {
+.action-buttons button {
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -43,35 +67,72 @@ body {
     color: #00043E;
 }
 /*hover */
-.action-button button:hover {
+.action-buttons button:hover {
     opacity: 0.8;
 }
-.todo-form {
-    display: flex;
-    gap: 10px;
-}
-.todo-form input, .todo-form button {
-    border: none;
-    padding: 12px;
-    border-radius: 5px;
-    background-color: #0F1428;
-    color: #AFC3EB;
 
-}
-.todo-input {
-    flex-grow: 1;
-}
-.add-button {
-    background-color: #6870C4;
-    font-size: 1.2rem;
+.todo-header {
+    display: flex; /* Menggunakan Flexbox agar sejajar */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px; /* Padding sama dengan baris tugas */
     font-weight: bold;
+    color: #aeb9d1; /* Warna sedikit berbeda untuk header */
+    border-bottom: 2px solid #4a4a70; /* Garis bawah sebagai pemisah */
+    margin-bottom: 10px; /* Jarak ke daftar tugas */
+}
+.header-task {
+    flex-grow: 1; 
+}
+.header-date {
+    margin: 0 15px;
+    width: 90px; /* Beri lebar tetap agar rapi */
+    text-align: center;
+}
+.header-actions {
+    width: 157px; /* Sesuaikan lebar ini agar pas dengan 2 tombol */
+    text-align: center;
+}
+.todo-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a2e;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.todo-task .task-text { flex-grow: 1; }
+.todo-task .due-date { margin: 0 15px; }
+.todo-task .task-actions button {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
     cursor: pointer;
+    margin-left: 5px;
     transition: background-color 0.3s ease;
 }
-.add-button:hover {
-    background-color: #9A9DC0;
-}
+.complete-button { background-color: #3b8c58; color: white; }
+.delete-button { background-color: #8c3b3b; color: white; }
+.complete-button:hover { background-color: #4cae72; }
+.delete-button:hover { background-color: #a84c4c; }
 .todo-task.completed .todo-text {
     text-decoration: line-through;
+    opacity: 0.5;
+}
+.todo-container {
+    position: relative;
+    min-height: 100px;
+}
+.no-task-message {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #AFC3EB;
     opacity: 0.5;
 }
