@@ -78,8 +78,10 @@ body {
     padding: 15px; /* Padding sama dengan baris tugas */
     font-weight: bold;
     color: #aeb9d1; /* Warna sedikit berbeda untuk header */
+    background-color: #0F1428;
+    border-radius: 5px;
     border-bottom: 2px solid #4a4a70; /* Garis bawah sebagai pemisah */
-    margin-bottom: 10px; /* Jarak ke daftar tugas */
+    
 }
 .header-task {
     flex-grow: 1; 
@@ -90,7 +92,7 @@ body {
     text-align: center;
 }
 .header-actions {
-    width: 157px; /* Sesuaikan lebar ini agar pas dengan 2 tombol */
+    width: 157px; 
     text-align: center;
 }
 .todo-task {
@@ -102,10 +104,16 @@ body {
     border-radius: 5px;
     margin-top: 10px;
     transition: all 0.3s ease;
+    border: 1px solid #0F1428;
 }
 
 .todo-task .task-text { flex-grow: 1; }
-.todo-task .due-date { margin: 0 15px; }
+.todo-task .due-date { 
+    margin: 0 10px; 
+    width: 90px;
+    text-align: center;
+}
+.todo-task .status { width: 80px; text-align: center; }
 .todo-task .task-actions button {
     border: none;
     padding: 8px 12px;
@@ -123,12 +131,16 @@ body {
     opacity: 0.5;
 }
 .todo-container {
+    background-color: #0F1428;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
     position: relative;
-    min-height: 100px;
+    min-height: 120px;
 }
 .no-task-message {
     position: absolute;
-    top: 90%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 1.2rem;
