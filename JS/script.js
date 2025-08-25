@@ -71,7 +71,7 @@ function deleteAllTasks() {
 
 }
 
-function cycleFilter() {
+function cycleFilters() {
     if (currentFilter === 'all') {
         currentFilter = 'pending';
         filterButton.textContent = 'Pending';
